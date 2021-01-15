@@ -3,7 +3,7 @@
 	<h1>Welcome to Misskey!</h1>
 	<div>
 		<p>{{ $ts.intro }}</p>
-		<MkInput v-model:value="username" pattern="^[a-zA-Z0-9_]{1,20}$" spellcheck="false" required>
+		<MkInput v-model:value="username" spellcheck="false" required>
 			<span>{{ $ts.username }}</span>
 			<template #prefix>@</template>
 			<template #suffix>@{{ host }}</template>
