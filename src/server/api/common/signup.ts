@@ -14,6 +14,7 @@ import { UsedUsername } from '../../../models/entities/used-username';
 export async function signup(username: User['username'], password: UserProfile['password'], host: string | null = null) {
 	// Validate username
 	if (!Users.validateLocalUsername.ok(username)) {
+		console.log("shit");
 		throw new Error('INVALID_USERNAME');
 	}
 
