@@ -19,7 +19,7 @@ export const meta = {
 		},
 
 		scope: {
-			validator: $.optional.arr($.str.match(/^[a-zA-Z0-9_]+$/)),
+			validator: $.optional.arr(),
 			default: [],
 		},
 	}
