@@ -5,7 +5,7 @@
 			<span>{{ $ts.invitationCode }}</span>
 			<template #prefix><Fa :icon="faKey"/></template>
 		</MkInput>
-		<MkInput v-model:value="username" type="text" pattern="^[a-zA-Z0-9_]{1,20}$" :autocomplete="Math.random()" spellcheck="false" required @update:value="onChangeUsername">
+		<MkInput v-model:value="username" type="text" :autocomplete="Math.random()" spellcheck="false" required @update:value="onChangeUsername">
 			<span>{{ $ts.username }}</span>
 			<template #prefix>@</template>
 			<template #suffix>@{{ host }}</template>
@@ -128,11 +128,7 @@ export default defineComponent({
 				return;
 			}
 
-			const err =
-				!this.username.match(/^[a-zA-Z0-9_]+$/) ? 'invalid-format' :
-				this.username.length < 1 ? 'min-range' :
-				this.username.length > 20 ? 'max-range' :
-				null;
+			const err = this.username.length < 1 ? 'min-range' : this.username.length > 20 ? 'max-range' : null;
 
 			if (err) {
 				this.usernameState = err;

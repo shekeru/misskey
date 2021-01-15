@@ -3,7 +3,7 @@
 	<div class="auth _section">
 		<div class="avatar" :style="{ backgroundImage: user ? `url('${ user.avatarUrl }')` : null }" v-show="withAvatar"></div>
 		<div class="normal-signin" v-if="!totpLogin">
-			<MkInput v-model:value="username" type="text" pattern="^[a-zA-Z0-9_]+$" spellcheck="false" autofocus required @update:value="onUsernameChange">
+			<MkInput v-model:value="username" type="text" spellcheck="false" autofocus required @update:value="onUsernameChange">
 				<span>{{ $ts.username }}</span>
 				<template #prefix>@</template>
 				<template #suffix>@{{ host }}</template>
